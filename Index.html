@@ -3,37 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>Happy Birthday Gopzzz! ❤️</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Confetti & Fireworks Library -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <header class="hero">
-        <h1>Happy Birthday! 🎈</h1>
-        <p>I wanted to do something a little different this year.</p>
-        <button id="confettiBtn">Tap for a surprise</button>
-    </header>
 
-    <section class="gallery">
-        <h2>Some of my favorite moments</h2>
-        
-        <div class="story-card">
-            <!-- Image 1 -->
-            <img src="photo1.jpg" alt="Our trip">
-            <p class="caption">"That time we got completely lost. My favorite part wasn't the destination, it was wandering around with you."</p>
-        </div>
+    <!-- 🎵 Music Player -->
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
 
-        <div class="story-card">
-            <!-- Image 2 -->
-            <img src="photo2.jpg" alt="Smiling together">
-            <p class="caption">"Just a completely unfiltered, perfect moment. You always make me laugh harder than anyone else."</p>
-        </div>
+    <!-- 🏠 1. Welcome Screen -->
+    <section id="welcomeScreen" class="screen active">
+        <div class="floating-balloons">🎈🎈🎈</div>
+        <h1>Ready for your surprise?</h1>
+        <button id="startBtn">Let's Go 🎵</button>
     </section>
 
-    <footer>
-        <p>Made with ❤️ just for you.</p>
-    </footer>
+    <!-- 🎁 3. Interactive Gift Box -->
+    <section id="giftScreen" class="screen hidden">
+        <h2>Tap to open your gift!</h2>
+        <div id="giftBox" class="emoji-btn">🎁</div>
+    </section>
+
+    <!-- 💌 4. Typewriter Letter -->
+    <section id="letterScreen" class="screen hidden">
+        <div class="letter-container">
+            <p id="typewriterText"></p>
+        </div>
+        <button id="nextToGallery" class="hidden">See Our Memories 📸</button>
+    </section>
+
+    <!-- 📸 5. Photo Gallery Slideshow -->
+    <section id="galleryScreen" class="screen hidden">
+        <h2>My Favorite Moments</h2>
+        <div class="slideshow">
+            <!-- Ensure your first photo is named photo1.jpg -->
+            <img id="slideImg" src="photo1.jpg" alt="Memory">
+        </div>
+        <div class="controls">
+            <button id="prevBtn">⬅️</button>
+            <button id="nextBtn">➡️</button>
+        </div>
+        <button id="finalBtn">One Last Surprise ✨</button>
+    </section>
+
+    <!-- ✨ 7. Final Surprise & Cake -->
+    <section id="finalScreen" class="screen hidden">
+        <div id="cake" class="emoji-btn">🎂</div>
+        <h1 class="glow-text">Happy Birthday Gopzzz ❤️</h1>
+        <p>Tap the cake for fireworks!</p>
+        <div class="hearts">💖💖💖</div>
+    </section>
 
     <script src="script.js"></script>
 </body>
