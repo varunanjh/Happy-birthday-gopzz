@@ -1,91 +1,97 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* Premium Reset & Fonts */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #faf9f6; 
-    color: #2b2b2b;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d0d; /* Premium dark background */
+    color: #fff;
+    overflow-x: hidden;
     text-align: center;
-    line-height: 1.6;
 }
 
-.hero {
-    height: 80vh;
+/* Screen Transitions */
+.screen {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #ffc3a0 0%, #ffafbd 100%);
     padding: 20px;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
+.active { opacity: 1; z-index: 10; }
+.hidden { opacity: 0; z-index: -1; pointer-events: none; }
 
-.hero p {
-    font-size: 1.2rem;
-    color: #fff;
-    margin-bottom: 30px;
+/* Typography */
+h1 { 
+    font-family: 'Dancing Script', cursive; 
+    font-size: 3.5rem; 
+    color: #ff69b4; /* Hot pink */
+    margin-bottom: 20px; 
 }
+h2 { font-size: 2rem; color: #ffd700; margin-bottom: 20px; } /* Gold */
 
+/* Buttons */
 button {
     padding: 15px 30px;
     font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    background-color: #fff;
-    color: #ff6b81;
+    background: linear-gradient(45deg, #ff1493, #ff69b4);
+    color: white;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+    margin-top: 20px;
+    transition: transform 0.2s;
+}
+button:active { transform: scale(0.95); }
+
+/* Animations & Emojis */
+.floating-balloons { font-size: 4rem; animation: float 3s ease-in-out infinite; }
+.emoji-btn { font-size: 6rem; cursor: pointer; animation: pulse 2s infinite; user-select: none; }
+.emoji-btn:active { transform: scale(0.9); }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
-button:active {
-    transform: scale(0.95); 
-}
-
-.gallery {
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.gallery h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #ff6b81;
-}
-
-.story-card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.story-card img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    background-color: #eee; 
-}
-
-.caption {
-    font-size: 1.1rem;
-    font-style: italic;
-    color: #555;
-}
-
-footer {
+/* Typewriter Letter */
+.letter-container {
+    background: rgba(255, 255, 255, 0.1);
     padding: 30px;
-    font-size: 0.9rem;
-    color: #888;
+    border-radius: 15px;
+    max-width: 90%;
+    width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    min-height: 250px;
+    border: 1px solid rgba(255, 105, 180, 0.3);
+    text-align: left;
 }
+
+/* Photo Gallery Slideshow */
+.slideshow img {
+    width: 100%;
+    max-width: 350px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid #ff69b4;
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+}
+.controls { margin-top: 20px; display: flex; gap: 20px; justify-content: center; }
+.controls button { background: #333; padding: 10px 20px; font-size: 1.5rem; box-shadow: none; }
+
+/* Final Surprise Text */
+.glow-text { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; }
+.hearts { font-size: 3rem; margin-top: 20px; animation: pulse 1.5s infinite; }
